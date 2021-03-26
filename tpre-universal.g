@@ -66,7 +66,7 @@ if move.axes[3].machinePosition != -tools[{state.nextTool}].offsets[3]
     M98 P"unlock_turret.g" ; Call unlock_turret.g
     G90 ; Absolute Positioning
 
-    ; echo "Rotating turret to "^{-tools[{state.nextTool}].offsets[3]}
+    echo "Rotating turret to "^{-tools[{state.nextTool}].offsets[3]}
     G1 U{-tools[{state.nextTool}].offsets[3]} F16000 ; Rotate turret to new tool
     G4 P20 ; Dwell for 20 ms
 
