@@ -5,7 +5,7 @@ M453 ; Switch to CNC Mode
 
 ; Ensure appropriate axis endstops are used
 M574 X1 S1 P"xstop" ; Configure X endstop position at low end, it's a microswitch on pin "xstop"
-M574 Y1 S2 P"ystop" ; Configure Y endstop position at low end, it's a microswitch on pin "ystop"
+M574 Y2 S1 P"ystop" ; Configure Y endstop position at high end, it's a microswitch on pin "ystop"
 M574 Z2 S1 P"zstop" ; Configure Z endstop position at high end, it's a microswitch on pin "zstop"
 
 M84 E0:1:2:3 ; Idle all extruder motors

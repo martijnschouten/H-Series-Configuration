@@ -67,3 +67,7 @@ M575 P1 B115200 S1; Set up UART for pendant input
 ; Post Config.g Commands
 M501 ; Set active parameters to those stored in config-override.g
 M307 H6 I1 ; A bug exists in RRF 3.2.2 and before that prevents M500 from saving the inversion parameter for heater models. RT added this line as a temporary workaround on 2/18/2021
+
+;enable debugging
+;M111 P3 S1
+;M111 P15 S1
