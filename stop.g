@@ -15,7 +15,7 @@ elif move.axes[2].machinePosition + 40 > move.axes[2].max ; If we don't have eno
     M913 Z100 ; Restore Z-axis motor current to 100%
 
 G90 ; Set to Absolute Positioning
-G1 Y85 F6000 ; Move Y to 85 mm at 6000 mm/min
+G1 Y-85 F6000 ; Move Y to -85 mm at 6000 mm/min
 
 if state.machineMode="CNC"
     M5 ; Turn off all spindles

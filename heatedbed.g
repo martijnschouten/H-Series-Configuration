@@ -7,3 +7,4 @@ M308 S0 P"bedtemp" Y"thermistor" T100000 B3950 C0 A"Bed" ; Create Sensor 0 assig
 M950 H0 C"bedheat" T0 ; Create Heater 0 using pin "bedheat" and temperature sensor 0
 M140 H0 ; Define heater 0 as a bed heater
 M143 H0 S120 ; Limit Bed temperature to 120C
+global bed_was_on_before_pause = false

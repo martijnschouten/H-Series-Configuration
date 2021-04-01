@@ -29,7 +29,7 @@ M569 P9 S0 ; Set motor driver direction. Motor driver number 9 goes backwards (S
 ; Drive settings
 M584 X0 Y1 Z2 U3 V8 W7 E6:6:6:6:6:9  ; Set driver mapping, E drive is multiplexed. Hide the extra axes
 M208 X-210 Y-93 Z-10 U-9.42 V-100 W0 S1 ; Set axis minima
-M208 X210 Y93 Z202.64 U350 V200 W35 S0 ; Set axis maxima
+M208 X210 Y93 Z198.64 U350 V200 W35 S0 ; Set axis maxima
 M350 X16 Y16 Z16 U16 V16 W16 E16:16:16:16:16:16 I1 ; Configure microstepping with interpolation
 M92 X320 Y320 Z640 U322.31 V1600 W800 E96:96:96:96:96:96 ; Set steps per mm
 M566 X300 Y300 Z300 U120 V500 W500 E1200:1200:1200:1200:1200:1200 ; Set maximum instantaneous speed changes (mm/min)
@@ -69,5 +69,5 @@ M501 ; Set active parameters to those stored in config-override.g
 M307 H6 I1 ; A bug exists in RRF 3.2.2 and before that prevents M500 from saving the inversion parameter for heater models. RT added this line as a temporary workaround on 2/18/2021
 
 ;enable debugging
-M111 P3 S1
-M111 P15 S1
+;M111 P3 S1
+;M111 P15 S1
