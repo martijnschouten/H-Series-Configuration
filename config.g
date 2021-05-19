@@ -8,7 +8,7 @@
 
 ; Network
 M550 P"H4052" ; Set machine name
-M552 S1 P192.168.1.52 ; Enable network
+M552 S1 P0.0.0.0 ; Enable network
 
 ; General preferences
 G90 ; Absolute Positioning
@@ -35,7 +35,7 @@ M92 X320 Y320 Z640 U322.31 V1600 W800 E96:96:96:96:96:96 ; Set steps per mm
 M566 X300 Y300 Z300 U120 V500 W500 E1200:1200:1200:1200:1200:1200 ; Set maximum instantaneous speed changes (mm/min)
 M203 X12000 Y12000 Z3000 U8900 V10000 W20000 E6000:6000:6000:6000:6000:6000 ; Set maximum speeds (mm/min)
 M201 X600 Y600 Z450 U600 V500 W500 E250:250:250:250:250:250 ; Set accelerations (mm/s^2)
-M906 X1800 Y2100 Z1800 U1200 V800 W800 E1500:1500:1500:1500:1500:500 I30 ; Set motor currents (mA) and motor idle factor in per cent
+M906 X1800 Y2100 Z1800 U1200 V800 W800 E1500:1500:1500:1500:1500:1000 I30 ; Set motor currents (mA) and motor idle factor in per cent
 M84 S5 ; Allow all motors to drop hold current to idle after 5 seconds
 
 ; Endstops
