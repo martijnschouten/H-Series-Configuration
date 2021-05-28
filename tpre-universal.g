@@ -55,13 +55,21 @@ if move.axes[3].machinePosition != -tools[{state.nextTool}].offsets[3]
 
 
     if move.axes[2].machinePosition + 40 <= move.axes[2].max ; If we have enough room for a normal tool change Z-hop, do it.
+<<<<<<< Updated upstream
         echo "moving z position to"^move.axes[2].machinePosition
+=======
+        ;echo "moving z position to"^move.axes[2].machinePosition
+>>>>>>> Stashed changes
         G1 Z40 F6000 ; Move Z +40mm at 6000 mm/min
     elif move.axes[2].machinePosition + 40 > move.axes[2].max ; If we don't have enough room, move as high as we can.
         M574 Z2 S1 P"zstop" ; Configure Z endstop position at high end, it's a microswitch on pin "zstop"
         M400 ; Wait for all moves to finish
         M913 Z50; Reduce Z-axis motor current to 50%
+<<<<<<< Updated upstream
         echo "homing z during toolchange"^move.axes[2].machinePosition
+=======
+        ;echo "homing z during toolchange"^move.axes[2].machinePosition
+>>>>>>> Stashed changes
         G1 Z40 F6000 H3 ; Attempt to move Z +40mm at 6000 mm/min, but halt if endstop triggered and set axis limit current position, overriding value set by previous M208 or G1 H3 special move
         M400 ; Wait for all moves to finish
         M913 Z100 ; Restore Z-axis motor current to 100%
@@ -69,7 +77,11 @@ if move.axes[3].machinePosition != -tools[{state.nextTool}].offsets[3]
     M98 P"unlock_turret.g" ; Call unlock_turret.g
     G90 ; Absolute Positioning
 
+<<<<<<< Updated upstream
     echo "Rotating turret to "^{-tools[{state.nextTool}].offsets[3]}
+=======
+    ;echo "Rotating turret to "^{-tools[{state.nextTool}].offsets[3]}
+>>>>>>> Stashed changes
     G1 U{-tools[{state.nextTool}].offsets[3]} F16000 ; Rotate turret to new tool
     G4 P20 ; Dwell for 20 ms
 

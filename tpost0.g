@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ; tpost0.g
 ; called after tool 0 has been selected
 ;
@@ -5,3 +6,11 @@
 
 ; Wait for set temperatures to be reached
 M116 P0
+=======
+; Switch to FFF mode
+M451
+
+; Go back to the saved position
+G1 R2 X0 Y0 F6000
+G1 R2 Z0
+>>>>>>> Stashed changes

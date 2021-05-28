@@ -1,7 +1,7 @@
 ; measurez.g
 ; Called to probe the bed and set Z0 to the bed surface and then set Z-axis maximum to the carefully measured location of the upper Z-axis endstop relative to the bed surface.
 
-M291 P"Turret will now move. Is Probe above the surface to measure?" R"Crash Check" S3 ; Warn the user about the imminent probing move.
+;M291 P"Turret will now move. Is Probe above the surface to measure?" R"Crash Check" S3 ; Warn the user about the imminent probing move.
 
 T10 ; Select Tool 10 (probe)
 M18 Z ; Idle z axis to unhome the Z axis
