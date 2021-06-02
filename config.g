@@ -7,24 +7,15 @@
 ; M929 P"eventlog.txt" S3 ; start logging to file eventlog.txt (S0 = stop logging, S1 = log level WARN, S2 = log level INFO, S3 = log level DEBUG)
 
 ; Network
-<<<<<<< Updated upstream
-M550 P"H4052" ; Set machine name
-M552 S1 P192.168.1.52 ; Enable network
-=======
 M550 P"H4006" ; Set machine name
 M552 S1; Enable network
->>>>>>> Stashed changes
 
 ; General preferences
 G90 ; Absolute Positioning
 M83 ; Relative Extrusions
 
 ; Drive orientation
-<<<<<<< Updated upstream
-M569 P0 S1 ; Set motor driver direction. Motor driver number 0 goes forwards  (S1). Line 22: X (Linear)
-=======
 M569 P0 S0 ; Set motor driver direction. Motor driver number 0 goes forwards  (S1). Line 22: X (Linear)
->>>>>>> Stashed changes
 M569 P1 S1 ; Set motor driver direction. Motor driver number 1 goes forwards  (S1). Line 22: Y (Linear)
 M569 P2 S0 ; Set motor driver direction. Motor driver number 2 goes backwards (S0). Line 22: Z (Linear)
 M569 P3 S0 ; Set motor driver direction. Motor driver number 3 goes backwards (S0). Line 22: U (Turret)
@@ -36,23 +27,15 @@ M569 P8 S0 ; Set motor driver direction. Motor driver number 8 goes forwards  (S
 M569 P9 S0 ; Set motor driver direction. Motor driver number 9 goes backwards (S0). Line 22: E4 (Filament Assist)
 
 ; Drive settings
-M584 X0 Y1 Z2 U3 V8 W7 E6:6:6:6:6:9  ; Set driver mapping, E drive is multiplexed. Hide the extra axes
-<<<<<<< Updated upstream
-M208 X-210 Y-93 Z-10 U-9.42 V-100 W0 S1 ; Set axis minima
-=======
+M584 X0 Y1 Z2 U3 V8 W7 E6:6:6:6:6:5:9  ; Set driver mapping, E drive is multiplexed. Hide the extra axes
 M208 X-210 Y-93 Z-10 U-6.0 V-100 W0 S1 ; Set axis minima
->>>>>>> Stashed changes
 M208 X210 Y93 Z210 U350 V200 W35 S0 ; Set axis maxima
-M350 X16 Y16 Z16 U16 V16 W16 E16:16:16:16:16:16 I1 ; Configure microstepping with interpolation
-M92 X320 Y320 Z640 U322.31 V1600 W800 E96:96:96:96:96:96 ; Set steps per mm
-M566 X300 Y300 Z300 U120 V500 W500 E1200:1200:1200:1200:1200:1200 ; Set maximum instantaneous speed changes (mm/min)
-M203 X12000 Y12000 Z3000 U8900 V10000 W20000 E6000:6000:6000:6000:6000:6000 ; Set maximum speeds (mm/min)
-M201 X600 Y600 Z450 U600 V500 W500 E250:250:250:250:250:250 ; Set accelerations (mm/s^2)
-<<<<<<< Updated upstream
-M906 X1800 Y2100 Z1800 U1200 V800 W800 E1500:1500:1500:1500:1500:500 I30 ; Set motor currents (mA) and motor idle factor in per cent
-=======
-M906 X1800 Y2100 Z1800 U1200 V800 W800 E1500:1500:1500:1500:1500:1000 I30 ; Set motor currents (mA) and motor idle factor in per cent
->>>>>>> Stashed changes
+M350 X16 Y16 Z16 U16 V16 W16 E16:16:16:16:16:16:16 I1 ; Configure microstepping with interpolation
+M92 X320 Y320 Z640 U322.31 V1600 W800 E96:96:96:96:96:3078:96; Set steps per mm
+M566 X300 Y300 Z300 U120 V500 W500 E1200:1200:1200:1200:1200:40:1200 ; Set maximum instantaneous speed changes (mm/min)
+M203 X12000 Y12000 Z3000 U8900 V10000 W20000 E6000:6000:6000:6000:6000:200:6000: ; Set maximum speeds (mm/min)
+M201 X600 Y600 Z450 U600 V500 W500 E250:250:250:250:250:1:250 ; Set accelerations (mm/s^2)
+M906 X1800 Y2100 Z1800 U1200 V800 W800 E1500:1500:1500:1500:1500:1000:1000 I30 ; Set motor currents (mA) and motor idle factor in per cent
 M84 S5 ; Allow all motors to drop hold current to idle after 5 seconds
 
 ; Endstops

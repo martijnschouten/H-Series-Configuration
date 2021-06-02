@@ -8,7 +8,7 @@ M574 X1 S1 P"xstop" ; Configure X endstop position at low end, it's a microswitc
 M574 Y2 S1 P"ystop" ; Configure Y endstop position at high end, it's a microswitch on pin "ystop"
 M574 Z2 S1 P"zstop" ; Configure Z endstop position at high end, it's a microswitch on pin "zstop"
 
-M84 E0:1:2:3 ; Idle all extruder motors
+M84 E0:1:2:3:4:5 ; Idle all extruder motors
 T-1 ; Deselect current tool (if any)
 G92 A0 C0 ; Set current A and C positions as 0 mm
 

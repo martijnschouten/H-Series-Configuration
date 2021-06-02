@@ -10,12 +10,8 @@ G30 ; Probe the bed at the current XY position. When the probe is triggered, set
 ; M557 X-180:180 Y-80:80 S90:45 ; Define a probing grid bounded for X between -180 and 180 and Y between -80 and 80 with X and Y probe point spacings of 90mm and 45mm, respectively
 
 ;For printing the test pattern
-<<<<<<< Updated upstream
-M557 X-80:80 Y-50:50 S40:25
-=======
 ;M557 X-80:80 Y-60:60 S40:30 :default
-M557 X-30:30 Y-30:30 S20 ; Heime for waffer probing
->>>>>>> Stashed changes
+M557 X-30:30 Y-30:30 S20 ; Heime for wafer probing
 
 ;Use with Dovetail Bed
 ;M557 X-180:180 Y-45:45 S90

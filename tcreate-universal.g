@@ -8,6 +8,7 @@ M98 P"tcreate2.g"
 M98 P"tcreate3.g"
 M98 P"tcreate4.g"
 M98 P"tcreate5.g"
+M98 P"tcreate6.g"
 M563 P10 S"Probe"
 
 ; Configure Extruder Fans
