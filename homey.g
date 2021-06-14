@@ -2,7 +2,7 @@
 ; Called to home only the Y axis
 
 ; Ensure appropriate axis endstops are used
-M574 Y2 S1 P"ystop" ; Configure Y endstop position at high end, it's a microswitch on pin "ystop"
+M574 Y1 S1 P"ystop" ; Configure Y endstop position at high end, it's a microswitch on pin "ystop"
 M574 Z2 S1 P"zstop" ; Configure Z endstop position at high end, it's a microswitch on pin "zstop"
 
 G91 ; Relative Positioning
@@ -12,9 +12,9 @@ M400 ; Wait for all moves to finish
 M913 Y50 Z50 ; Reduce Y-, and Z-axis motor currents to 50%
 
 G1 H1 Z2 F200 ; Attempt to move Z +2mm at 200 mm/min, but halt if endstop triggered and set axis position to axis limit as defined by previous M208 or G1 H3 special move
-G1 H1 Y180 F6000 ; Attempt to move Y 180mm at 6000 mm/min, but halt if endstop triggered and set axis position to axis limit as defined by previous M208 or G1 H3 special move
-G1 H2 Y-2 F6000 ; Move Y -2mm at 6000 mm/min, ignoring endstop while moving
-G1 H1 Y20 F200 ; Attempt to move Y 20mm at 200 mm/min, but halt if endstop triggered and set axis position to axis limit as defined by previous M208 or G1 H3 special move
+G1 H1 Y-180 F6000 ; Attempt to move Y 180mm at 6000 mm/min, but halt if endstop triggered and set axis position to axis limit as defined by previous M208 or G1 H3 special move
+G1 H2 Y2 F6000 ; Move Y -2mm at 6000 mm/min, ignoring endstop while moving
+G1 H1 Y-20 F200 ; Attempt to move Y 20mm at 200 mm/min, but halt if endstop triggered and set axis position to axis limit as defined by previous M208 or G1 H3 special move
 M400 ; Wait for all moves to finish
 M913 Y100 Z100 ; Restore Y-, and Z-axis motor currents to 100%
 
