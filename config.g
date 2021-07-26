@@ -26,7 +26,7 @@ M569 P7 S1 ; Set motor driver direction. Motor driver number 7 goes forwards  (S
 M569 P8 S0 ; Set motor driver direction. Motor driver number 8 goes forwards  (S1). Line 22: V (Turret Lock)
 M569 P9 S0 ; Set motor driver direction. Motor driver number 9 goes backwards (S0). Line 22: E4 (Filament Assist)
 
-; Drive settings
+; Drive settings with paste extruder: fucks things up
 M584 X0 Y1 Z2 U3 V8 W7 E6:6:6:6:6:5:9  ; Set driver mapping, E drive is multiplexed. Hide the extra axes
 M208 X-210 Y-93 Z-10 U-6.0 V-100 W0 S1 ; Set axis minima
 M208 X210 Y93 Z210 U350 V200 W35 S0 ; Set axis maxima
