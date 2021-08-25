@@ -16,7 +16,7 @@ M83 ; Relative Extrusions
 
 ; Drive orientation
 M569 P0 S1 ; Set motor driver direction. Motor driver number 0 goes forwards  (S1). Line 22: X (Linear)
-M569 P1 S0 ; Set motor driver direction. Motor driver number 1 goes forwards  (S1). Line 22: Y (Linear)
+M569 P1 S1 ; Set motor driver direction. Motor driver number 1 goes forwards  (S1). Line 22: Y (Linear)
 M569 P2 S0 ; Set motor driver direction. Motor driver number 2 goes backwards (S0). Line 22: Z (Linear)
 M569 P3 S0 ; Set motor driver direction. Motor driver number 3 goes backwards (S0). Line 22: U (Turret)
 M569 P4 S0 ; Set motor driver direction. Motor driver number 4 goes backwards (S0). Line 22: A (Rotary)
@@ -40,7 +40,7 @@ M84 S5 ; Allow all motors to drop hold current to idle after 5 seconds
 
 ; Endstops
 M574 X1 S1 P"xstop" ; Configure X endstop position at low end, it's a microswitch on pin "xstop"
-M574 Y1 S1 P"ystop" ; Configure Y endstop position at low end, it's a microswitch on pin "ystop"
+M574 Y2 S1 P"ystop" ; Configure Y endstop position at low end, it's a microswitch on pin "ystop"
 M574 Z2 S1 P"zstop" ; Configure Z endstop position at high end, it's a microswitch on pin "zstop"
 M574 U1 S1 P"e0stop" ; Configure U endstop position at low end, it's a microswitch on pin "e0stop"
 M574 V0 S1 P"e1stop" ; Configure V endstop position at no end, it's a microswitch on pin "e1stop"
