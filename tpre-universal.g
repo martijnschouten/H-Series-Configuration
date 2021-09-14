@@ -15,6 +15,11 @@ M84 E0:1:2:3 ; Idle all extruder motors
 ; 110         Tool 4    MOT 3
 ; 111         Tool 10   N/C
 
+if state.nextTool == 6
+    M106 P7 S255; turn on valve
+else
+	M106 P7 S0; turn off valve
+	
 if state.nextTool == 1
     M42 P2 S0 ; Set GPIO pin 2 low
     M42 P3 S0 ; Set GPIO pin 3 low
