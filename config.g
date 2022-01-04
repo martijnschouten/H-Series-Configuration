@@ -31,11 +31,11 @@ M584 X0 Y1 Z2 U3 V8 W7 E6:6:6:6:6:9  ; Set driver mapping, E drive is multiplexe
 M208 X-210 Y-93 Z-10 U-9.42 V-100 W0 S1 ; Set axis minima
 M208 X210 Y93 Z210 U350 V200 W35 S0 ; Set axis maxima
 M350 X16 Y16 Z16 U16 V16 W16 E16:16:16:16:16:16 I1 ; Configure microstepping with interpolation
-M92 X320 Y320 Z640 U322.31 V1600 W800 E96:96:96:96:96:96 ; Set steps per mm
+M92 X320 Y320 Z640 U322.31 V1600 W800 E400:96:96:96:96:96 ; Set steps per mm
 M566 X300 Y300 Z300 U120 V500 W500 E1200:1200:1200:1200:1200:1200 ; Set maximum instantaneous speed changes (mm/min)
 M203 X12000 Y12000 Z3000 U8900 V10000 W20000 E6000:6000:6000:6000:6000:6000 ; Set maximum speeds (mm/min)
 M201 X600 Y600 Z450 U600 V500 W500 E250:250:250:250:250:250 ; Set accelerations (mm/s^2)
-M906 X1800 Y2100 Z1800 U1200 V800 W800 E1500:1500:1500:1500:1500:1000 I30 ; Set motor currents (mA) and motor idle factor in per cent
+M906 X1800 Y2100 Z1800 U1200 V800 W800 E500:1500:1500:1500:1500:1000 I30 ; Set motor currents (mA) and motor idle factor in per cent
 M84 S5 ; Allow all motors to drop hold current to idle after 5 seconds
 
 ; Endstops
@@ -57,7 +57,7 @@ M98 P"tcreate-universal.g"
 
 ; Miscellaneous
 M98 P"cleaningstation.g" ; Configure cleaning station
-;M98 P"drycabinet.g" ; Configure filament drying cabinet
+M98 P"drycabinet.g" ; Configure filament drying cabinet
 M98 P"heatedbed.g" ; Configure heated bed
 M98 P"toolpriming.g" ; Configure tool priming parameters
 M911 S19 R22 P"M98 P""estop.g"""  ; Run estop.g on power loss during a print
