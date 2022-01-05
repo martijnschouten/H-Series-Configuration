@@ -1,7 +1,7 @@
 ; Universal tpre macro
 
 M453 ; Switch to CNC mode
-M84 E0:1:2:3 ; Idle all extruder motors
+M84 E0:1:2:3:4:5 ; Idle all extruder motors
 
 ; Configure extruder multiplexer for upcoming tool
 ; GPIO[2-4]   Tool #    MOT #
@@ -19,31 +19,56 @@ if state.nextTool == 1
     M42 P2 S0 ; Set GPIO pin 2 low
     M42 P3 S0 ; Set GPIO pin 3 low
     M42 P4 S0 ; Set GPIO pin 4 low
+    M106 P4 S0 ; Disable air pressure
+	M208 X-210 Y-93 Z-10 U-9.42 V-100 W0 S1 ; Set axis minima
+	M208 X210 Y93 Z210 U350 V200 W35 S0 ; Set axis maxima
+	
 
 elif state.nextTool == 2
     M42 P2 S1 ; Set GPIO pin 2 high
     M42 P3 S0 ; Set GPIO pin 3 low
     M42 P4 S0 ; Set GPIO pin 4 low
+    M106 P4 S0 ; Disable air pressure
+	M208 X-210 Y-93 Z-10 U-9.42 V-100 W0 S1 ; Set axis minima
+	M208 X210 Y93 Z210 U350 V200 W35 S0 ; Set axis maxima
 
 elif state.nextTool == 3
     M42 P2 S0 ; Set GPIO pin 2 low
     M42 P3 S1 ; Set GPIO pin 3 high
     M42 P4 S0 ; Set GPIO pin 4 low
+    M106 P4 S0 ; Disable air pressure
+	M208 X-210 Y-93 Z-10 U-9.42 V-100 W0 S1 ; Set axis minima
+	M208 X210 Y93 Z210 U350 V200 W35 S0 ; Set axis maxima
 
 elif state.nextTool == 4
     M42 P2 S1 ; Set GPIO pin 2 high
     M42 P3 S1 ; Set GPIO pin 3 high
     M42 P4 S0 ; Set GPIO pin 4 low
+    M106 P4 S0 ; Disable air pressure
+	M208 X-210 Y-93 Z-10 U-9.42 V-100 W0 S1 ; Set axis minima
+	M208 X210 Y93 Z210 U350 V200 W35 S0 ; Set axis maxima
 
 elif state.nextTool == 5
     M42 P2 S0 ; Set GPIO pin 2 low
     M42 P3 S0 ; Set GPIO pin 3 low
     M42 P4 S1 ; Set GPIO pin 4 high
+    M106 P4 S0 ; Disable air pressure
+	M208 X-210 Y-93 Z-10 U-9.42 V-100 W0 S1 ; Set axis minima
+	M208 X210 Y93 Z210 U350 V200 W35 S0 ; Set axis maxima
+	
+elif state.nextTool == 6
+    M42 P2 S0 ; Set GPIO pin 2 low
+    M42 P3 S1 ; Set GPIO pin 3 high
+    M42 P4 S1 ; Set GPIO pin 4 high
+    M106 P4 S255 ; Enable air pressure
+	M208 X-60 Y-20 Z-10 U-9.42 V-100 W0 S1 ; Set axis minima
+	M208 X210 Y93 Z210 U350 V200 W35 S0 ; Set axis maxima
 
 elif state.nextTool == 10
     M42 P2 S1 ; Set GPIO pin 2 high
     M42 P3 S1 ; Set GPIO pin 3 high
     M42 P4 S1 ; Set GPIO pin 4 high
+    M106 P4 S0 ; Disable air pressure
 
 else
     abort "Tool "^state.nextTool^" has not been configured. Tool change aborted."

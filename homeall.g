@@ -3,12 +3,16 @@
 
 M453 ; Switch to CNC Mode
 
+M208 X-210 Y-93 Z-10 U-9.42 V-100 W0 S1 ; Set axis minima
+M208 X210 Y93 Z210 U350 V200 W35 S0 ; Set axis maxima
+M501
+
 ; Ensure appropriate axis endstops are used
 M574 X1 S1 P"xstop" ; Configure X endstop position at low end, it's a microswitch on pin "xstop"
 M574 Y1 S1 P"ystop" ; Configure Y endstop position at high end, it's a microswitch on pin "ystop"
 M574 Z2 S1 P"zstop" ; Configure Z endstop position at high end, it's a microswitch on pin "zstop"
 
-M84 E0:1:2:3 ; Idle all extruder motors
+M84 E0:1:2:3:4:5 ; Idle all extruder motors
 T-1 ; Deselect current tool (if any)
 G92 A0 C0 ; Set current A and C positions as 0 mm
 
@@ -45,7 +49,7 @@ G92 U0 ; Set current U position as 0 mm
 M574 Z1 S2 ; Set Z endstop position to low end and configure as Z probe
 
 G1 X0 Y0 F10000 ; Move to X=0, Y=0 at 10000 mm/min
-G1 Z{move.axes[2].max + min(tools[1].offsets[2], tools[2].offsets[2], tools[3].offsets[2], tools[4].offsets[2], tools[5].offsets[2], tools[10].offsets[2])} F10000 ; Move to Z = ZMax + Longest Z Offset at 10000 mm/min
+G1 Z{move.axes[2].max + min(tools[1].offsets[2], tools[2].offsets[2], tools[3].offsets[2], tools[4].offsets[2], tools[6].offsets[2], tools[10].offsets[2])} F10000 ; Move to Z = ZMax + Longest Z Offset at 10000 mm/min
 
 G60 S1 ; Save current position in slot 1 (the slot used when pausing)
 
