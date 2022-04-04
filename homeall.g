@@ -5,10 +5,10 @@ M453 ; Switch to CNC Mode
 
 ; Ensure appropriate axis endstops are used
 M574 X1 S1 P"xstop" ; Configure X endstop position at low end, it's a microswitch on pin "xstop"
-M574 Y2 S1 P"ystop" ; Configure Y endstop position at high end, it's a microswitch on pin "ystop"
+M574 Y1 S1 P"ystop" ; Configure Y endstop position at high end, it's a microswitch on pin "ystop"
 M574 Z2 S1 P"zstop" ; Configure Z endstop position at high end, it's a microswitch on pin "zstop"
 
-M84 E0:1:2:3 ; Idle all extruder motors
+M84 E0:1:2:3:4:5 ; Idle all extruder motors
 T-1 ; Deselect current tool (if any)
 G92 A0 C0 ; Set current A and C positions as 0 mm
 
@@ -29,10 +29,16 @@ G4 P100 ; Dwell for 100 ms
 ; Home X Y Z U
 M400 ; Wait for all moves to finish
 M913 X50 Y50 Z50 ; Reduce X-, Y-, and Z-axis motor currents to 50%
-G1 H1 X-420 Y180 Z220 U-380 F6000 ; Attempt to move X -420mm, Y 180mm, Z +220mm, and U -380mm at 6000 mm/min, but halt when endstop triggered and set axis position to axis limit as defined by previous M208 or G1 H3 special move
-G1 H2 X2 Y-2 Z-2 U2 F6000 ; Move X +2mm, Y +2mm, Z 2mm, and U +2mm at 6000 mm/min, ignoring endstops and axis limits while moving
-G1 H1 X-4 Y4 Z4 U-4 F1000 ; Attempt to move X -4mm, Y 4mm, Z +4mm, and U -4mm at 1000 mm/min, but halt when endstop triggered and set axis position to axis limit as defined by previous M208 or G1 H3 special move
-G1 H2 X2 Y-2 Z-2 U2 F6000 ; Move X +2mm, Y -2mm, Z -2mm, and U +2mm at 6000 mm/min, ignoring endstops and axis limits while moving
+;G1 H1 X-420 Y180 Z220 U-380 F6000 ; Attempt to move X -420mm, Y 180mm, Z +220mm, and U -380mm at 6000 mm/min, but halt when endstop triggered and set axis position to axis limit as defined by previous M208 or G1 H3 special move
+;G1 H2 X2 Y-2 Z-2 U2 F6000 ; Move X +2mm, Y +2mm, Z 2mm, and U +2mm at 6000 mm/min, ignoring endstops and axis limits while moving
+;G1 H1 X-4 Y4 Z4 U-4 F1000 ; Attempt to move X -4mm, Y 4mm, Z +4mm, and U -4mm at 1000 mm/min, but halt when endstop triggered and set axis position to axis limit as defined by previous M208 or G1 H3 special move
+;G1 H2 X2 Y-2 Z-2 U2 F6000 ; Move X +2mm, Y -2mm, Z -2mm, and U +2mm at 6000 mm/min, ignoring endstops and axis limits while moving
+; for mirrored Y axis
+G1 H1 X-420 Y-180 Z220 U-380 F6000 ; Attempt to move X -420mm, Y 180mm, Z +220mm, and U -380mm at 6000 mm/min, but halt when endstop triggered and set axis position to axis limit as defined by previous M208 or G1 H3 special move
+G1 H2 X2 Y2 Z-2 U2 F6000 ; Move X +2mm, Y +2mm, Z 2mm, and U +2mm at 6000 mm/min, ignoring endstops and axis limits while moving
+G1 H1 X-4 Y-4 Z4 U-4 F1000 ; Attempt to move X -4mm, Y 4mm, Z +4mm, and U -4mm at 1000 mm/min, but halt when endstop triggered and set axis position to axis limit as defined by previous M208 or G1 H3 special move
+G1 H2 X2 Y2 Z-2 U2 F6000 ; Move X +2mm, Y -2mm, Z -2mm, and U +2mm at 6000 mm/min, ignoring endstops and axis limits while moving
+
 M400 ; Wait for all moves to finish
 M913 X100 Y100 Z100 ; Restore X-, Y-, and Z-axis motor currents to 100%
 
