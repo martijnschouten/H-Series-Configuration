@@ -3,8 +3,10 @@
 
 M453 ; Switch to CNC Mode
 
+M106 P4 S0 ; Disable air pressure
+
 M208 X-210 Y-93 Z-10 U-9.42 V-100 W0 S1 ; Set axis minima
-M208 X210 Y93 Z210 U350 V200 W35 S0 ; Set axis maxima
+M208 X210 Y93 Z200 U350 V200 W35 S0 ; Set axis maxima
 M501
 
 ; Ensure appropriate axis endstops are used

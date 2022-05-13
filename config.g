@@ -35,7 +35,7 @@ M569 P9 S0 ; Set motor driver direction. Motor driver number 9 goes backwards (S
 ;M566 X300 Y300 Z300 U120 V500 W500 E1200:1200:1200:1200:1200:1200 ; Set maximum instantaneous speed changes (mm/min)
 ;M203 X12000 Y12000 Z3000 U8900 V10000 W20000 E6000:6000:6000:6000:6000:6000 ; Set maximum speeds (mm/min)
 ;M201 X600 Y600 Z450 U600 V500 W500 E250:250:250:250:250:250 ; Set accelerations (mm/s^2)
-;M906 X1800 Y2100 Z1800 U1200 V800 W800 E500:1500:1500:1500:1500:1000 I30 ; Set motor currents (mA) and motor idle factor in per cent
+;M906 X1800 Y2100 Z1800 U1200 V800 W800 E500:500:500:500:1500:1000 I30 ; Set motor currents (mA) and motor idle factor in per cent
 ;M84 S5 ; Allow all motors to drop hold current to idle after 5 seconds
 
 ; Drive settings with paste extruder
@@ -47,19 +47,19 @@ M569 P9 S0 ; Set motor driver direction. Motor driver number 9 goes backwards (S
 ;M566 X300 Y300 Z300 U120 V500 W500 E1200:1200:1200:1200:1200:1200:1200 ; Set maximum instantaneous speed changes (mm/min)
 ;M203 X12000 Y12000 Z3000 U8900 V10000 W20000 E6000:6000:6000:6000:6000:600:6000 ; Set maximum speeds (mm/min)
 ;M201 X600 Y600 Z450 U600 V500 W500 E250:250:250:250:250:25:250 ; Set accelerations (mm/s^2)
-;M906 X1800 Y2100 Z1800 U1200 V800 W800 E500:1500:1500:1500:1500:1000:1000 I30 ; Set motor currents (mA) and motor idle factor in per cent
+;M906 X1800 Y2100 Z1800 U1200 V800 W800 E500:500:500:500:1500:1000:1000 I30 ; Set motor currents (mA) and motor idle factor in per cent
 ;M84 S5 ; Allow all motors to drop hold current to idle after 5 seconds
 
 ; Drive settings with paste extruder
 M584 X0 Y1 Z2 U3 V8 W7 E6:6:6:6:5:9  ; Set driver mapping, E drive is multiplexed. Hide the extra axes
 M208 X-210 Y-93 Z-10 U-9.42 V-100 W0 S1 ; Set axis minima
-M208 X210 Y93 Z210 U350 V200 W35 S0 ; Set axis maxima
+M208 X210 Y93 Z200 U350 V200 W35 S0 ; Set axis maxima
 M350 X16 Y16 Z16 U16 V16 W16 E16:16:16:16:16:16 I1 ; Configure microstepping with interpolation
-M92 X320 Y320 Z640 U322.31 V1600 W800 E400:96:96:96:3079:96 ; Set steps per mm
+M92 X320 Y320 Z640 U322.31 V1600 W800 E400:400:400:400:3079:96 ; Set steps per mm
 M566 X300 Y300 Z300 U120 V500 W500 E1200:1200:1200:1200:1200:1200 ; Set maximum instantaneous speed changes (mm/min)
 M203 X12000 Y12000 Z3000 U8900 V10000 W20000 E6000:6000:6000:6000:600:6000 ; Set maximum speeds (mm/min)
 M201 X600 Y600 Z450 U600 V500 W500 E250:250:250:250:25:250 ; Set accelerations (mm/s^2)
-M906 X1800 Y2100 Z1800 U1200 V800 W800 E500:1500:1500:1500:1000:1000 I30 ; Set motor currents (mA) and motor idle factor in per cent
+M906 X1800 Y2100 Z1800 U1200 V800 W800 E500:500:500:500:1000:1000 I30 ; Set motor currents (mA) and motor idle factor in per cent
 M84 S5 ; Allow all motors to drop hold current to idle after 5 seconds
 
 ; Endstops

@@ -16,7 +16,7 @@ M950 F1 C"fan1"         ; Define Extruder Cooling Fan - Define Fan 1 to use pin 
 M106 P1 H1:2:3:4:5 T50 ; Configure Extruder Cooling Fan - Configure Fan 1: Turn on when any extruder heaters (heaters 3-5) reach the trigger temperature of 50C
 
 ; Configure Layer Fans
-M950 F3 C"duex.fan3"    ; Layer Fans - Define Fan 3 to use pin duex.fan3
+M950 F3 C"duex.fan3" Q500    ; Layer Fans - Define Fan 3 to use pin duex.fan3
 M106 P3 C"Layer Fan" ; Layer Fans - Configure Fan 3
 
 ; Configure Layer Fans
