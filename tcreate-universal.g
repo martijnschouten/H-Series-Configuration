@@ -6,7 +6,7 @@
 M98 P"tcreate1.g"
 M98 P"tcreate2.g"
 M98 P"tcreate3.g"
-M98 P"tcreate4.g"
+M98 P"tcreate4.g"  
 ;M98 P"tcreate5.g"
 M98 P"tcreate6.g"
 M563 P10 S"Probe"
@@ -17,7 +17,7 @@ M106 P1 H1:2:3:4:5 T50 ; Configure Extruder Cooling Fan - Configure Fan 1: Turn 
 
 ; Configure Layer Fans
 M950 F3 C"duex.fan3" Q500    ; Layer Fans - Define Fan 3 to use pin duex.fan3
-M106 P3 C"Layer Fan" ; Layer Fans - Configure Fan 3
+M106 P3 C"Layer Fan" X128 B0.5 ; Layer Fans - Configure Fan 3
 
 ; Configure Layer Fans
 M950 F4 C"duex.fan4"    ; Air Pressure - Define Fan 4 to use pin duex.fan3
