@@ -27,14 +27,14 @@ G10 P1 R0 S0 ; Set Tool 1 active and standby temperatures to 0C
 G10 P2 R0 S0 ; Set Tool 2 active and standby temperatures to 0C
 G10 P3 R0 S0 ; Set Tool 3 active and standby temperatures to 0C
 G10 P4 R0 S0 ; Set Tool 4 active and standby temperatures to 0C
-G10 P5 R0 S0 ; Set Tool 5 active and standby temperatures to 0C
+;G10 P5 R0 S0 ; Set Tool 5 active and standby temperatures to 0C
 
 ; Put all the tools into standby mode and leave no tool selected
 T1 P0
 T2 P0
 T3 P0
 T4 P0
-T5 P0
+;T5 P0
 T10 P0
 T-1 P0
 

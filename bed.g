@@ -11,8 +11,9 @@ G1 X0 Y0 Z20 F8000 ; Move to X=0, Y=-45, and Z=3 at 8000 mm/min
 G30 ; Probe the bed at the current XY position. When the probe is triggered, set the Z coordinate to the probe trigger height.
 
 ;Use with Flat Print Bed
-;M557 X-180:180 Y-80:80 S45:40 ; Define a probing grid bounded for X between -180 and 180 and Y between -80 and 80 with X and Y probe point spacings of 45mm and 20mm, respectively\
-M557 X-150:150 Y-40:40 S50:20 ; Define a probing grid bounded for X between -180 and 180 and Y between -80 and 80 with X and Y probe point spacings of 45mm and 20mm, respectively\
+M557 X-180:180 Y-80:80 S45:40 ; Define a probing grid bounded for X between -180 and 180 and Y between -80 and 80 with X and Y probe point spacings of 45mm and 20mm, respectively\
+;M557 X-200:0 Y-80:0 S20:20 ; Silver ink probing
+;M557 X-150:150 Y-40:40 S50:20 ; Define a probing grid bounded for X between -180 and 180 and Y between -80 and 80 with X and Y probe point spacings of 45mm and 20mm, respectively\
 ;M557 X-70:70 Y-30:30 S20:20 ; Define a probing grid bounded for X between -110 and 110 and Y between -40 and 40 with X and Y probe point spacings of 22mm and 10mm, respectively
 ;M557 X0:180 Y-80:80 S45:20 ; Define a probing grid bounded for X between 0 and 180 and Y between -80 and 80 with X and Y probe point spacings of 45mm and 20mm, respectively
 ;M557 X-100:100 Y-80:80 S40:40 ; Gerjan : M557 X-180:180 Y-80:80 S45:20 was default
